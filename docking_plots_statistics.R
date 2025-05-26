@@ -66,12 +66,12 @@ nad_energy$source = "NAD"
 
 combined_energies = rbind(cap0_energy, cap1_energy, cap2_energy, fad_energy, nad_energy)
 
-# Specifying the desired order for the factors
+# Specifying the desired order for the caps
 caps_ordered_ifit1 = c("cap0", "cap1", "cap2", "NAD", "FAD")
 combined_energies$source = factor(combined_energies$source, levels = caps_ordered_ifit1)
 caps_ordered_ifit1 #checking order of caps
 
-# Create the plot
+# Creating the plot
 ggplot(combined_energies, aes(x = source, y = V2)) +
   geom_violin() + 
   labs(title = "Violin Plot of IFIT1 binding affinities",
@@ -340,7 +340,7 @@ data_nad_ifit1 = read.csv("~/Documents/RNA_Genomics/docking_ifit1_NAD/ifit1_NAD_
 #data_m6a_ifit1 = read.csv("~/Documents/RNA_Genomics/ifit1_m6a/ifit1_extracted_columns.txt", sep = "\t", header = F, stringsAsFactors = F)
 #data_TMG_ifit1 = read.csv("~/Documents/RNA_Genomics/ifit1_TMG/ifit1_TMG_extracted_columns.txt", sep = "\t", header = F, stringsAsFactors = F)
 
-# Extract column 2 (energy values)
+# Extract column 2 (energy values, column V2)
 cap0_energy = select(data_cap0_ifit1, V2)
 cap1_energy = select(data_cap1_ifit1, V2)
 cap2_energy = select(data_cap2_ifit1, V2)
@@ -362,7 +362,7 @@ nad_ifit1_rmsd_ub = select(data_nad_ifit1, V4)
 #m6a_ifit1_rmsd_ub = select(data_m6a_ifit1, V4)
 #TMG_ifit1_rmsd_ub = select(data_TMG_ifit1, V4)
 
-# Extracting rmsd l.b values (column V4)
+# Extracting rmsd l.b values (column V3)
 cap0_ifit1_rmsd_lb = select(data_cap0_ifit1, V3)
 cap1_ifit1_rmsd_lb = select(data_cap1_ifit1, V3)
 cap2_ifit1_rmsd_lb = select(data_cap2_ifit1, V3)
