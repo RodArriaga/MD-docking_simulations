@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#This script performs 10 vina runs and outputs the energy results in a .txt file, and the pdb results in a .pbqt file. Run this in a dedicated directory for each ligand and recepto changing the config file to the corresponding receptor-ligand docking procedure.
+#This script performs 10 vina runs and outputs the energy results in a .txt file, and the pdb results in a .pbqt file. Run this in a dedicated directory for each ligand and receptor changing the config file to the corresponding receptor-ligand docking procedure.
 #Copy the receptor, ligand (.pdbqt) and config file (.txt) into the directory where the script will be run
 
 for i in {1..10}
